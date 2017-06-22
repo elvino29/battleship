@@ -9,6 +9,7 @@
   "scripts": {},
   "devDependencies": {
     "express-handlebars": "^3.0.0",
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "path": "^0.12.7"
   }
 }
