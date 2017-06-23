@@ -261,3 +261,12 @@ html, body {
 
 
 }
+
+#historique {
+  background-image: url("../img/French_battleship_Massena_as_breakwater.png");
+  background-size: auto;
+}
+
+#pied {
+  align-content: center;
+  }
