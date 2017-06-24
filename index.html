@@ -26,8 +26,8 @@
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark mdl-typography--text-right">
             <a href="#overview" class="mdl-layout__tab is-active">Accueil</a>
-            <a href="#features" class="mdl-layout__tab">S'inscrire</a>
-            <a href="#features" class="mdl-layout__tab">Se connecter</a>
+            <a href="#inscrire" class="mdl-layout__tab">S'inscrire</a>
+            <a href="#connect" class="mdl-layout__tab">Se connecter</a>
             <a href="#about" class="mdl-layout__tab">À Propos</a>
         </div>
     </header>
@@ -94,6 +94,8 @@
                 </div>
             </section>
         </div>
+
+
         <div class="mdl-layout__tab-panel" id="about">
             <section class="section--center mdl-grid mdl-grid--no-spacing">
                 <div class="mdl-cell mdl-cell--12-col">
@@ -170,6 +172,107 @@
                 </div>
             </section>
         </div>
+
+        <div class="mdl-layout__tab-panel" id="inscrire" style="background-color: inherit;">
+            <section class="section--center mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-card  mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                        <h4 class="mdl-cell mdl-cell--12-col">Inscription</h4>
+
+                        <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                            <form method="post" action="/inscription">
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="name" name="name">
+                                    <label class="mdl-textfield__label" for="name">Name</label>
+                                </div>
+
+                                <br>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="pseudo" name="pseudo">
+                                    <label class="mdl-textfield__label" for="pseudo">Pseudo</label>
+                                </div>
+
+                                <br>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="email" id="email" name="email">
+                                    <label class="mdl-textfield__label" for="email">Email</label>
+                                </div>
+
+                                <br>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="password" id="passwords" name="passwords" pattern=".{8,50}"  title="8 à 10 caractère requis">
+                                    <label class="mdl-textfield__label" for="passwords">Password</label>
+                                </div>
+
+                                <br>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="password" id="confpass" name="confpass" pattern=".{8,50}"  title="8 à 10 caractère requis">
+                                    <label class="mdl-textfield__label" for="confpass">Confirmation mot de passe</label>
+                                </div>
+
+                                <br>
+
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary mdl-js-ripple-effect">S'inscrire</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+                    <li class="mdl-menu__item">Lorem</li>
+                    <li class="mdl-menu__item" disabled>Ipsum</li>
+                    <li class="mdl-menu__item">Dolor</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="mdl-layout__tab-panel" id="connect" style="background-color: inherit;">
+            <section class="section--center mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-card  mdl-cell mdl-cell--12-col">
+                    <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                        <h4 class="mdl-cell mdl-cell--12-col">Connexion</h4>
+
+                        <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                            <form method="post" action="/login">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="email" id="username" name="username">
+                                    <label class="mdl-textfield__label" for="username">Email</label>
+                                </div>
+
+                                <br>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="password" id="password" name="password">
+                                    <label class="mdl-textfield__label" for="password">Password</label>
+                                </div>
+
+                                <br>
+
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary mdl-js-ripple-effect">Connexion</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
+                    <li class="mdl-menu__item">Lorem</li>
+                    <li class="mdl-menu__item" disabled>Ipsum</li>
+                    <li class="mdl-menu__item">Dolor</li>
+                </ul>
+            </section>
+        </div>
+
         <footer class="mdl-mega-footer" >
             <div class="mdl-mega-footer--middle-section" id="pied">
                 <div class="mdl-mega-footer--drop-down-section">
@@ -211,7 +314,6 @@
         </footer>
     </main>
 </div>
-<a href="https://github.com/google/material-design-lite/blob/master/templates/text-only/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
 <script src="/Assets/js/material.min.js"></script>
 
 </body>
