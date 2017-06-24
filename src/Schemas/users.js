@@ -4,5 +4,5 @@ exports.schemaUsers = new mongoose.Schema({
     email: {type: String, maxlength: 100},
     status: {type: String, maxlength: 150},
     profil: {type: String, maxlength: 250},
-    passwords: {type: String, maxlength: 60}
+    password: {type: String, maxlength: 60}
 });
