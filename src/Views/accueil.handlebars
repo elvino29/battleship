@@ -1,1 +1,57 @@
-<p>test</p>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font: 13px Helvetica, Arial; height: auto;}
+    #form {margin-left:10px; padding-bottom:10px;position: fixed; bottom: 0; width: 100%;}
+    #m{background-color: white;}
+    #messages { list-style-type: none; margin: 0; padding: 0; }
+    #messages li { padding: 5px 10px; }
+    #messages li:nth-child(odd) { background: #eee; }
+    #messages span { background-color: #F0E68C; float: right; padding-right: 0.5cm; }
+
+
+    /*css speech*/
+    li.speech {
+        position: relative;
+        width: 80%;
+        height: 50px;
+        line-height: 50px;
+        /*background-color: #fff;*/
+        border: 4px solid #666;
+        /*-webkit-border-radius: 15px;*/
+        /*-moz-border-radius: 15px;*/
+        /*border-radius: 15px;*/
+        -webkit-box-shadow: 1px 1px 2px #888;
+        -moz-box-shadow: 1px 1px 2px #888;
+        box-shadow: 1px 1px 2px #888;
+    }
+</style>
+
+<span id="messages" ></span>
+<ul id="messages" class="speech"></ul>
+
+<!--<p class="speech" id="messages"></p>-->
+
+<div id="remotes"></div>
+
+<form action="" onsubmit="datetime();" id="form">
+    <div class="mdl-grid">
+        <div class="mdl-cell--9-col lead emoji-picker-container">
+            <input id="m" autocomplete="off" data-emojiable="true" required />
+
+        </div>
+
+
+        <div class="mdl-cell--3-col" style="margin-left: 10px;">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="width: 100px;"><i class="material-icons">send</i></button>
+        </div>
+
+    </div>
+
+</form>
+<span id="author" hidden="hidden">{{user.name}}</span>
+
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
