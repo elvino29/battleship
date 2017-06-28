@@ -1,0 +1,218 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/Assets/css/material.min.css">
+    <link rel="stylesheet" href="/Assets/css/myCss.css"/>
+    <title>Qwirk</title>
+
+    <style>
+        .demo-card-wide.mdl-card.mdl-shadow--2dp {
+            margin-left: 30px;
+            width: 90%;
+            min-height: 150px;
+        }
+
+        .inputt {
+            width: 100%;
+        }
+        .taile{
+            max-height: 500px;
+        }
+        .mdl-card__supporting-text{
+            max-height: 400px;
+            overflow: auto;
+        }
+
+        .over{
+            min-height: 40px;
+            padding-top: 15px;
+        }
+        .over:hover{
+            background-color: gray;
+            opacity: 0.75;
+        }
+
+</style>
+
+    <style>
+        .demo-card-wide.mdl-card.mdl-shadow--2dp {
+            margin-left: 30px;
+        }
+
+        .demo-card-wide.mdl-card {
+            width: 512px;
+        }
+
+        .demo-card-wide > .mdl-card__title {
+            color: #fff;
+            height: 176px;
+            background: url('/Assets/img/slide1.jpeg') center / cover;
+        }
+
+        .demo-card-wide > .mdl-card__menu {
+            color: #fff;
+        }
+
+        .demo-list-three {
+            width: 90%;
+        }
+
+        .mdl-list__item-primary-content a{
+            text-decoration: none;
+            color: rgba(0,0,0,.87);
+        }
+        .over li:hover{
+            background-color: gray;
+            opacity: 0.75;
+        }
+
+    </style>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Profil</span>
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" id="search">
+                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+                <li class="mdl-menu__item">About</li>
+                <li class="mdl-menu__item">Legal information</li>
+            </ul>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <img src="/Assets/img/slide1.jpeg" class="demo-avatar">
+            <div class="demo-avatar-dropdown">
+                <span>hi!&nbsp;{{user.pseudo}}</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    <li class="mdl-menu__item"><a href="/profil" class="mdl-navigation__link">Profil</a></li>
+                    <li class="mdl-menu__item"><a href="/logout" class="mdl-navigation__link">Deconnexion</a></li>
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" href="/accueil"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Lobby Area</a>
+            <a class="mdl-navigation__link" href="/game"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">games</i>Game Area</a>
+            <a class="mdl-navigation__link" href="/leaderboard"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assignment</i>Leaderboard</a>
+
+
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <br>
+        <div class="mdl-grid">
+            <div class="mdl-cell--9-col">
+
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <div class="mdl-grid">
+                            <p style="display: none;" id="myid">{{user._id}}</p>
+
+                            <div class="mdl-cell--10-col">
+                                <div class="inputt mdl-textfield mdl-js-textfield">
+                                    <label for="labelname">Name : </label>
+                                    <input class="mdl-textfield__input" type="text" id="editName" value="{{user.name}}"/>
+                                    <br><br>
+                                    <label for="labelname">Pseudo : </label>
+                                    <input class="mdl-textfield__input" type="text" id="editPseudo" value="{{user.pseudo}}"/>
+                                    <br><br>
+                                    <label for="labelemail">Email</label>
+                                    <input class="mdl-textfield__input" type="text" id="editEmail" value="{{user.email}}" disabled/>
+                                    <br><br>
+
+                                    <input type="hidden" name="idUsers" id="idUsers" value="{{user._id}}">
+                                </div>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="width: 100px;" id="btnProfil" >OK</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-cell--3-col"></div>
+
+        </div>
+        <br>
+
+    </main>
+</div>
+
+<script src="/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+<script src="/Assets/js/material.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnProfil').click(function (e) {
+            e.preventDefault();
+            var id = $('#myid').text();
+            var editname = $('#editName').val();
+            var editPseudo = $('#editPseudo').val();
+            $.ajax({
+                type : 'PUT',
+                url  : 'http://localhost:9001/profil' ,
+                data : {name: editname, _id: id, pseudo: editPseudo},
+                dataType : "JSON",
+                success : function(data){
+                    location.reload(true);
+
+                },
+                error : function(data) {
+                    location.reload(true);
+                }
+            });
+            location.reload(true);
+        });
+
+        $('.over').click(function (e) {
+            e.preventDefault();
+            var id = $('#myid').text();
+            var editname = $('#editName').val();
+
+            $.ajax({
+                type : 'PUT',
+                url  : 'http://localhost:9001/profil' ,
+                data : {name: editname, _id: id},
+                dataType : "JSON",
+                success : function(data){
+
+                },
+                error : function(data) {
+
+                }
+            });
+
+        })
+
+
+
+
+    });
+</script>
+</body>
+
