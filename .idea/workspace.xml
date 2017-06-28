@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f716460-6d1a-441e-b594-21c188343fca" name="Default" comment="page d'accueil mise a jour">
+    <list default="true" id="1f716460-6d1a-441e-b594-21c188343fca" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/accueil.handlebars" afterPath="$PROJECT_DIR$/src/Views/accueil.handlebars" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Views/game.handlebars" afterPath="$PROJECT_DIR$/src/Views/game.handlebars" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -784,7 +781,7 @@
       <workItem from="1498324492968" duration="7841000" />
       <workItem from="1498531389925" duration="98000" />
       <workItem from="1498603416775" duration="14417000" />
-      <workItem from="1498656518587" duration="3035000" />
+      <workItem from="1498656518587" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="on npm install">
       <created>1498053426677</created>
@@ -849,11 +846,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498608244920</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="page d'accueil mise a jour">
+      <created>1498660772665</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1498660772665</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35437000" />
+    <option name="totallyTimeSpent" value="35580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="842" extended-state="6" />
