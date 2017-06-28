@@ -66,5 +66,5 @@ exports.Upprofil = function (req, res) {
 };
 
 exports.game = function (req, res) {
-    res.render('game');
+    res.sendFile(path.resolve('vuejs/index.html'));
 };
