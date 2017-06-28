@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/Assets/css/myCss.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Assets/lib/css/emoji.css"/>
-    <title>Qwirk</title>
+    <title>Batteship</title>
     <style>
         .demo-card-wide.mdl-card.mdl-shadow--2dp {
             margin-left: 30px;
@@ -47,114 +47,109 @@
         }
 
     </style>
-
-
 </head>
 <body>
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
-    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title">Inbox</span>
-            <div class="mdl-layout-spacer"></div>
-        </div>
-    </header>
-    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-        <header class="demo-drawer-header">
-            <img src="/Assets/img/slide1.jpeg" class="demo-avatar">
-            <div class="demo-avatar-dropdown">
-                <span>hi!&nbsp;{{user.name}}</span>
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Inbox</span>
                 <div class="mdl-layout-spacer"></div>
-                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                    <i class="material-icons" role="presentation">arrow_drop_down</i>
-                    <span class="visuallyhidden">Accounts</span>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                    <li class="mdl-menu__item"><a href="/profil" class="mdl-navigation__link">Profil</a></li>
-                    <li class="mdl-menu__item"><a href="/status" class="mdl-navigation__link">Status</a></li>
-                    <li class="mdl-menu__item"><a href="/logout" class="mdl-navigation__link">Deconnexion</a></li>
-                </ul>
             </div>
         </header>
-        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="/inbox"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
-            <a class="mdl-navigation__link" href="/people"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>People</a>
-            <a class="mdl-navigation__link" href="/private_chat"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Private Chatroom</a>
-            <a class="mdl-navigation__link" href="/public_chat"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Public Chatroom</a>
+        <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <header class="demo-drawer-header">
+                <img src="/Assets/img/slide1.jpeg" class="demo-avatar">
+                <div class="demo-avatar-dropdown">
+                    <span>hi!&nbsp;{{user.name}}</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                        <i class="material-icons" role="presentation">arrow_drop_down</i>
+                        <span class="visuallyhidden">Accounts</span>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                        <li class="mdl-menu__item"><a href="/profil" class="mdl-navigation__link">Profil</a></li>
+                        <li class="mdl-menu__item"><a href="/status" class="mdl-navigation__link">Status</a></li>
+                        <li class="mdl-menu__item"><a href="/logout" class="mdl-navigation__link">Deconnexion</a></li>
+                    </ul>
+                </div>
+            </header>
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+                <a class="mdl-navigation__link" href="/inbox"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
+                <a class="mdl-navigation__link" href="/people"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">person</i>People</a>
+                <a class="mdl-navigation__link" href="/private_chat"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Private Chatroom</a>
+                <a class="mdl-navigation__link" href="/public_chat"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Public Chatroom</a>
 
-            <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
-        </nav>
+                <div class="mdl-layout-spacer"></div>
+                <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content mdl-color--grey-100">
+            {{{body}}}
+        </main>
     </div>
-
-    <main class="mdl-layout__content mdl-color--grey-100">
-        {{{body}}}
-    </main>
-</div>
     <script src="/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
     <script src="/Assets/js/material.min.js"></script>
-<script src="/Assets/lib/js/config.js"></script>
-<script src="/Assets/lib/js/util.js"></script>
-<script src="/Assets/lib/js/jquery.emojiarea.js"></script>
-<script src="/Assets/lib/js/emoji-picker.js"></script>
+    <script src="/Assets/lib/js/config.js"></script>
+    <script src="/Assets/lib/js/util.js"></script>
+    <script src="/Assets/lib/js/jquery.emojiarea.js"></script>
+    <script src="/Assets/lib/js/emoji-picker.js"></script>
 
-<script>
-    $(function() {
-        // Initializes and creates emoji set from sprite sheet
-        window.emojiPicker = new EmojiPicker({
-            emojiable_selector: '[data-emojiable=true]',
-            assetsPath: '/Assets/lib/img/',
-            popupButtonClasses: 'fa fa-smile-o'
+    <script>
+        $(function() {
+            // Initializes and creates emoji set from sprite sheet
+            window.emojiPicker = new EmojiPicker({
+                emojiable_selector: '[data-emojiable=true]',
+                assetsPath: '/Assets/lib/img/',
+                popupButtonClasses: 'fa fa-smile-o'
+            });
+            // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+            // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+            // It can be called as many times as necessary; previously converted input fields will not be converted again
+            window.emojiPicker.discover();
         });
-        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-        // It can be called as many times as necessary; previously converted input fields will not be converted again
-        window.emojiPicker.discover();
-    });
-</script>
-<script>
-    // Google Analytics
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    </script>
+    <script>
+        // Google Analytics
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-49610253-3', 'auto');
-    ga('send', 'pageview');
-</script>
-<script>
+        ga('create', 'UA-49610253-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script>
 
-    $(function () {
-        var socket = io();
-        var id = socket.id;
-        $('#form').submit(function(){
-            socket.emit('chat message', $('#m').val());
-            $('#m').val('');
-            return false;
+        $(function () {
+            var socket = io();
+            var id = socket.id;
+            $('#form').submit(function(){
+                socket.emit('chat message', $('#m').val());
+                $('#m').val('');
+                return false;
+            });
+            socket.on('chat message', function(msg){
+                var author = $('#author').text();
+                $('#messages').append($('<span>').text(strDateTime)).append($('<li class="speech">').text(author+': '+msg));
+                console.log('Vous etes deja expediteur');
+            });
         });
-        socket.on('chat message', function(msg){
-            var author = $('#author').text();
-            $('#messages').append($('<span>').text(strDateTime)).append($('<li class="speech">').text(author+': '+msg));
-            console.log('Vous etes deja expediteur');
-        });
-    });
 
-    //Pad given value to the left with "0"
-    function AddZero(num) {
-        return (num >= 0 && num < 10) ? "0" + num : num + "";
-    }
+        //Pad given value to the left with "0"
+        function AddZero(num) {
+            return (num >= 0 && num < 10) ? "0" + num : num + "";
+        }
 
-    function datetime() {
-        var now = new Date();
-        strDateTime = [[AddZero(now.getDate()),
-            AddZero(now.getMonth() + 1),
-            now.getFullYear()].join("/"),
-            [AddZero(now.getHours()),
-                AddZero(now.getMinutes())].join(":"),
-            now.getHours() >= 12 ? "PM" : "AM"].join(" ");
-    };
-
-
-
-</script>
+        function datetime() {
+            var now = new Date();
+            strDateTime = [[AddZero(now.getDate()),
+                AddZero(now.getMonth() + 1),
+                now.getFullYear()].join("/"),
+                [AddZero(now.getHours()),
+                    AddZero(now.getMinutes())].join(":"),
+                now.getHours() >= 12 ? "PM" : "AM"].join(" ");
+        };
+    </script>
 </body>
 </html>
