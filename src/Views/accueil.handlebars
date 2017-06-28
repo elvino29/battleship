@@ -82,8 +82,6 @@
         <span id="messages" ></span>
         <ul id="messages" class="speech"></ul>
 
-        <!--<p class="speech" id="messages"></p>-->
-
         <div id="remotes"></div>
 
         <form action="" onsubmit="datetime();">
@@ -150,7 +148,6 @@
         socket.on('chat message', function(msg){
             var author = $('#author').text();
             $('#messages').append($('<span>').text(strDateTime)).append($('<li class="speech">').text(author+': '+msg));
-            console.log('Vous etes deja expediteur');
         });
     });
 
