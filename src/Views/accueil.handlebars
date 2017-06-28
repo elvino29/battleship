@@ -1,58 +1,131 @@
-<style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font: 13px Helvetica, Arial; height: auto;}
-    #form {margin-left:10px; padding-bottom:10px;position: fixed; bottom: 0; width: 100%;}
-    #m{background-color: white;}
-    #messages { list-style-type: none; margin: 0; padding: 0; }
-    #messages li { padding: 5px 10px; }
-    #messages li:nth-child(odd) { background: #eee; }
-    #messages span { background-color: #F0E68C; float: right; padding-right: 0.5cm; }
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="/Assets/css/material.min.css">
+    <link rel="stylesheet" href="/Assets/css/myCss.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Assets/lib/css/emoji.css"/>
+    <title>Battleship</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; height: auto;}
+        form {margin-left:10px; padding-bottom:10px;position: fixed; bottom: 0; width: 100%;}
+        #m{background-color: white;}
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
+        #messages span { background-color: #F0E68C; float: right; padding-right: 0.5cm; }
 
 
-    /*css speech*/
-    li.speech {
-        position: relative;
-        width: 80%;
-        height: 50px;
-        line-height: 50px;
-        /*background-color: #fff;*/
-        border: 4px solid #666;
-        /*-webkit-border-radius: 15px;*/
-        /*-moz-border-radius: 15px;*/
-        /*border-radius: 15px;*/
-        -webkit-box-shadow: 1px 1px 2px #888;
-        -moz-box-shadow: 1px 1px 2px #888;
-        box-shadow: 1px 1px 2px #888;
-    }
-</style>
+        /*css speech*/
+        li.speech {
+            position: relative;
+            width: 80%;
+            height: 50px;
+            line-height: 50px;
+            /*background-color: #fff;*/
+            border: 4px solid #666;
+            /*-webkit-border-radius: 15px;*/
+            /*-moz-border-radius: 15px;*/
+            /*border-radius: 15px;*/
+            -webkit-box-shadow: 1px 1px 2px #888;
+            -moz-box-shadow: 1px 1px 2px #888;
+            box-shadow: 1px 1px 2px #888;
+        }
+    </style>
 
 
-            <span id="messages" ></span>
-            <ul id="messages" class="speech"></ul>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Landing Page</span>
+            <div class="mdl-layout-spacer"></div>
+        </div>
+    </header>
+    <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+            <img src="/Assets/img/slide1.jpeg" class="demo-avatar">
+            <div class="demo-avatar-dropdown">
+                <span>hi!&nbsp;{{user.pseudo}}</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+                    <i class="material-icons" role="presentation">arrow_drop_down</i>
+                    <span class="visuallyhidden">Accounts</span>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+                    <li class="mdl-menu__item"><a href="/profil" class="mdl-navigation__link">Profil</a></li>
+                    <li class="mdl-menu__item"><a href="/logout" class="mdl-navigation__link">Deconnexion</a></li>
+                </ul>
+            </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+            <a class="mdl-navigation__link" href="/accueil"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Lobby Area</a>
+            <a class="mdl-navigation__link" href="/game"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">games</i>Game Area</a>
+            <a class="mdl-navigation__link" href="/leaderboard"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">assignment</i>Leaderboard</a>
 
-            <!--<p class="speech" id="messages"></p>-->
 
-            <div id="remotes"></div>
+            <div class="mdl-layout-spacer"></div>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+    </div>
 
-            <form action="" onsubmit="datetime();" id="form">
-                <div class="mdl-grid">
-                    <div class="mdl-cell--9-col lead emoji-picker-container">
-                        <input id="m" autocomplete="off" data-emojiable="true" required />
+    <main class="mdl-layout__content mdl-color--grey-100">
+        <span id="messages" ></span>
+        <ul id="messages" class="speech"></ul>
 
-                    </div>
+        <!--<p class="speech" id="messages"></p>-->
 
+        <div id="remotes"></div>
 
-                    <div class="mdl-cell--3-col" style="margin-left: 10px;">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="width: 100px;"><i class="material-icons">send</i></button>
-                    </div>
+        <form action="" onsubmit="datetime();">
+            <div class="mdl-grid">
+
+                <div class="mdl-cell--9-col lead emoji-picker-container">
+                    <input id="m" autocomplete="off" data-emojiable="true" required />
 
                 </div>
 
-            </form>
-            <span id="author" hidden="hidden">{{user.name}}</span>
+                <div class="mdl-cell--3-col" style="margin-left: 10px;">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="width: 100px;"><i class="material-icons">send</i></button>
+                </div>
 
+            </div>
 
+        </form>
+        <span id="author" hidden="hidden">{{user.name}}</span>
+    </main>
+</div>
+<script src="/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+<script src="/Assets/js/material.min.js"></script>
+<script src="/Assets/lib/js/config.js"></script>
+<script src="/Assets/lib/js/util.js"></script>
+<script src="/Assets/lib/js/jquery.emojiarea.js"></script>
+<script src="/Assets/lib/js/emoji-picker.js"></script>
 <script src="/socket.io/socket.io.js"></script>
+
+<script>
+    $(function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data-emojiable=true]',
+            assetsPath: '/Assets/lib/img/',
+            popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
+    });
+</script>
 
 <script>
     // Google Analytics
@@ -63,11 +136,13 @@
 
     ga('create', 'UA-49610253-3', 'auto');
     ga('send', 'pageview');
+</script>
+<script>
 
-//    socket io message
     $(function () {
         var socket = io();
-        $('#form').submit(function(){
+        var id = socket.id;
+        $('form').submit(function(){
             socket.emit('chat message', $('#m').val());
             $('#m').val('');
             return false;
@@ -75,6 +150,7 @@
         socket.on('chat message', function(msg){
             var author = $('#author').text();
             $('#messages').append($('<span>').text(strDateTime)).append($('<li class="speech">').text(author+': '+msg));
+            console.log('Vous etes deja expediteur');
         });
     });
 
@@ -92,5 +168,10 @@
                 AddZero(now.getMinutes())].join(":"),
             now.getHours() >= 12 ? "PM" : "AM"].join(" ");
     };
-    
+
+
+
 </script>
+
+</body>
+

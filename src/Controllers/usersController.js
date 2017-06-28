@@ -42,3 +42,29 @@ exports.logged = function (req, res) {
 exports.islogin = function (req, res) {
     res.render('accueil');
 };
+
+exports.profil = function (req, res) {
+    res.render('profil');
+};
+
+exports.Upprofil = function (req, res) {
+
+    var options = {_id: req.body._id};
+
+    var returnUpdateObject = function () {
+        models.User.findOneAsync(options)
+            .then(logLib.logContent);
+
+    }
+
+    delete req.body['_id'];
+
+    models.User.findOneAndUpdateAsync(options, req.body)
+        .then(returnUpdateObject);
+
+    res.redirect('/profil');
+};
+
+exports.game = function (req, res) {
+    res.render('game');
+};
