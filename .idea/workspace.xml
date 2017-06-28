@@ -47,8 +47,8 @@
       <file leaf-file-name="game.handlebars" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Views/game.handlebars">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="157" column="51" lean-forward="true" selection-start-line="157" selection-start-column="51" selection-end-line="157" selection-end-column="51" />
+            <state relative-caret-position="156">
+              <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -781,7 +781,7 @@
       <workItem from="1498324492968" duration="7841000" />
       <workItem from="1498531389925" duration="98000" />
       <workItem from="1498603416775" duration="14417000" />
-      <workItem from="1498656518587" duration="3192000" />
+      <workItem from="1498656518587" duration="3361000" />
     </task>
     <task id="LOCAL-00001" summary="on npm install">
       <created>1498053426677</created>
@@ -860,11 +860,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498660904583</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="page d'accueil mise a jour">
+      <created>1498660917100</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1498660917100</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35594000" />
+    <option name="totallyTimeSpent" value="35763000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="842" extended-state="6" />
@@ -1259,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Views/game.handlebars">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="157" column="51" lean-forward="true" selection-start-line="157" selection-start-column="51" selection-end-line="157" selection-end-column="51" />
+        <state relative-caret-position="156">
+          <caret line="143" column="0" lean-forward="true" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
           <folding />
         </state>
       </provider>
