@@ -68,3 +68,8 @@ exports.Upprofil = function (req, res) {
 exports.game = function (req, res) {
     res.sendFile(path.resolve('vuejs/index.html'));
 };
+
+exports.logout = function (req, res) {
+    req.logout();
+    res.redirect('/');
+};

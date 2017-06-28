@@ -9,6 +9,7 @@ app.get('/accueil', ensureAuthenticated, users.islogin);
 app.get('/profil',ensureAuthenticated, users.profil);
 app.put('/profil',ensureAuthenticated, users.Upprofil);
 app.get('/game',ensureAuthenticated, users.game);
+app.get('/logout', users.logout);
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
