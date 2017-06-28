@@ -781,7 +781,7 @@
       <workItem from="1498324492968" duration="7841000" />
       <workItem from="1498531389925" duration="98000" />
       <workItem from="1498603416775" duration="14417000" />
-      <workItem from="1498656518587" duration="3178000" />
+      <workItem from="1498656518587" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="on npm install">
       <created>1498053426677</created>
@@ -853,11 +853,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498660772665</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="page d'accueil mise a jour">
+      <created>1498660904583</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1498660904583</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35580000" />
+    <option name="totallyTimeSpent" value="35594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="842" extended-state="6" />
