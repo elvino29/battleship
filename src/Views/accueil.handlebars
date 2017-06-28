@@ -52,7 +52,7 @@
             <span id="author" hidden="hidden">{{user.name}}</span>
 
 
-            <script src="/socket.io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 
 <script>
     // Google Analytics
@@ -63,12 +63,10 @@
 
     ga('create', 'UA-49610253-3', 'auto');
     ga('send', 'pageview');
-</script>
-<script>
 
+//    socket io message
     $(function () {
         var socket = io();
-        var id = socket.id;
         $('#form').submit(function(){
             socket.emit('chat message', $('#m').val());
             $('#m').val('');
@@ -77,7 +75,6 @@
         socket.on('chat message', function(msg){
             var author = $('#author').text();
             $('#messages').append($('<span>').text(strDateTime)).append($('<li class="speech">').text(author+': '+msg));
-            console.log('Vous etes deja expediteur');
         });
     });
 
@@ -95,7 +92,5 @@
                 AddZero(now.getMinutes())].join(":"),
             now.getHours() >= 12 ? "PM" : "AM"].join(" ");
     };
-
-
-
+    
 </script>

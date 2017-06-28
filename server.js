@@ -10,7 +10,6 @@ fs = promise.promisifyAll(require('fs'));
 // handlebars
 var exphbs = require('express-handlebars');
 
-
 cookieParser = require('cookie-parser');
 expressValidator = require('express-validator');
 flash = require('connect-flash');
@@ -24,6 +23,17 @@ app = express();
 
 http = require('http').Server(app);
 var io = require('socket.io')(http);
+
+io.on('connection', function (socket) {
+    console.log('a user connected');
+    socket.on('disconnect', function () {
+        console.log(('user disconnect'));
+    })
+
+    socket.on('chat message', function (msg) {
+        io.emit('chat message', msg);
+    });
+});
 
 // BodyParser middleware
 var bodyParser = require('body-parser');
